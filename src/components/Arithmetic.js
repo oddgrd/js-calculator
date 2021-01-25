@@ -27,8 +27,10 @@ function Arithmetic({
     } else if (input.toString() === total.toString()) {
       setInput(op);
       setCalculation(total.concat(op));
+      //see if last char is operator and current char isnt "-"
     } else if (/[+x/-]/.test(prev) && !/-/.test(op)) {
       setInput(op);
+      //see if last two chars are operators (in case of a swapped minus)
       if (!/\d/.test(calculation.charAt(calculation.length - 2))) {
         setCalculation(calculation.slice(0, calculation.length - 2).concat(op));
       } else {

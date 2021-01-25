@@ -1,5 +1,5 @@
 import React from "react";
-const { evaluate } = require("mathjs");
+const { evaluate, round } = require("mathjs");
 
 function Operator({
   id,
@@ -23,24 +23,16 @@ function Operator({
       let problem = calculation.replace(/x/g, "*");
       if (problem && /[+*/-]/.test(problem.slice(problem.length - 1))) {
         problem = problem.slice(0, problem.length - 1);
-      }
-      if (problem.indexOf("=") === -1 && problem) {
-        const result = evaluate(problem).toString();
+      } else {
+        const result = round(evaluate(problem), 4).toString();
         setTotal(result);
         setInput(result);
         setCalculation(calculation.concat("=", result));
         setPrev("");
-        console.log(result);
       }
     }
   };
-  // const parseProblem = (arr) => {
-  //   const copy = [...arr];
-  //   const problem = copy.forEach(function(el) {
 
-  //   });
-
-  // }
   return (
     <button
       id={id}

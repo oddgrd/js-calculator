@@ -68,6 +68,7 @@ body {
   padding-bottom: 3px;
   padding-right: 3px;
   border-bottom: 2px solid #801336;
+  overflow: hidden;
 }
 .cal,
 .inp {
@@ -75,6 +76,9 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+}
+.cal {
+  font-size: 1.1rem;
 }
 
 .creator {
