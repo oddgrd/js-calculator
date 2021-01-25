@@ -58,7 +58,7 @@ body {
 .operator:active {
   background: #c72c41;
 }
-#displayy {
+.display-div {
   height: 17%;
   width: 100%;
   color: #ee9d40;
