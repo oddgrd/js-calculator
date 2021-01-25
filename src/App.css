@@ -1,38 +1,93 @@
-.App {
-  text-align: center;
+/* https://colorhunt.co/palette/163991 */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #2d132c;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.calc-container {
+  border: 2px solid #801336;
+  color: #ee4540;
+  width: 340px;
+  height: 370px;
+  display: block;
+}
+.grid-container {
+  width: 100%;
+  height: 83%;
+  align-self: flex-end;
+  display: inline-grid;
+  grid-template-areas:
+    "clear clear divide multiply"
+    "seven eight nine subtract"
+    "four five six add"
+    "one two three equals"
+    "zero zero decimal equals";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1px;
+  border-top: 1px solid #2d132c;
+}
+
+.number,
+.operator {
+  cursor: pointer;
+  background: #801336;
+  border: none;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.number:hover,
+.operator:hover {
+  color: #ee9d40;
 }
 
-.App-link {
-  color: #61dafb;
+.number:active,
+.operator:active {
+  background: #c72c41;
+}
+#displayy {
+  height: 17%;
+  width: 100%;
+  color: #ee9d40;
+  background: #1a0b19;
+  font-size: 1.5rem;
+  display: block;
+  padding-bottom: 3px;
+  padding-right: 3px;
+  border-bottom: 2px solid #801336;
+}
+.cal,
+.inp {
+  height: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.creator {
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-end;
+  font-family: "Orbitron", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #ee9d40;
+}
+a:hover {
+  color: purple;
 }
