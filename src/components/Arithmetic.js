@@ -7,6 +7,8 @@ function Arithmetic({
   setCalculation,
   calculation,
   total,
+  prev,
+  setPrev,
 }) {
   const symbol =
     id === "add"
@@ -25,10 +27,18 @@ function Arithmetic({
     } else if (input.toString() === total.toString()) {
       setInput(op);
       setCalculation(total.concat(op));
+    } else if (/[+x/-]/.test(prev) && !/-/.test(op)) {
+      setInput(op);
+      if (!/\d/.test(calculation.charAt(calculation.length - 2))) {
+        setCalculation(calculation.slice(0, calculation.length - 2).concat(op));
+      } else {
+        setCalculation(calculation.slice(0, calculation.length - 1).concat(op));
+      }
     } else {
       setCalculation(calculation.concat(op));
       setInput(op);
     }
+    setPrev(op);
   };
   return (
     <button

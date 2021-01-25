@@ -8,23 +8,29 @@ function Operator({
   calculation,
   total,
   setTotal,
+  setPrev,
 }) {
   const symbol = id === "equals" ? "=" : "AC";
   const handleClick = () => {
     if (id === "clear") {
       setInput("0");
       setCalculation("");
+      setPrev("");
       if (total) {
         setTotal("");
       }
     } else {
-      const problem = calculation.replace(/x/g, "*");
+      let problem = calculation.replace(/x/g, "*");
+      if (problem && /[+*/-]/.test(problem.slice(problem.length - 1))) {
+        problem = problem.slice(0, problem.length - 1);
+      }
       if (problem.indexOf("=") === -1 && problem) {
         const result = evaluate(problem).toString();
-        console.log(result);
         setTotal(result);
         setInput(result);
         setCalculation(calculation.concat("=", result));
+        setPrev("");
+        console.log(result);
       }
     }
   };

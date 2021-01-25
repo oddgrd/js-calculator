@@ -2,6 +2,7 @@ import React from "react";
 import Arithmetic from "./Arithmetic";
 import Operator from "./Operator";
 const arithmetics = ["add", "subtract", "multiply", "divide"];
+const ops = ["equals", "clear"];
 function Operators({
   input,
   setInput,
@@ -9,6 +10,8 @@ function Operators({
   calculation,
   total,
   setTotal,
+  prev,
+  setPrev,
 }) {
   return (
     <>
@@ -22,24 +25,25 @@ function Operators({
             setCalculation={setCalculation}
             calculation={calculation}
             total={total}
+            prev={prev}
+            setPrev={setPrev}
           />
         );
       })}
-      <Operator
-        id="equals"
-        setInput={setInput}
-        setCalculation={setCalculation}
-        calculation={calculation}
-        total={total}
-        setTotal={setTotal}
-      />
-      <Operator
-        id="clear"
-        setInput={setInput}
-        setCalculation={setCalculation}
-        calculation={calculation}
-        setTotal={setTotal}
-      />
+      {ops.map((op, index) => {
+        return (
+          <Operator
+            id={op}
+            key={index}
+            setInput={setInput}
+            setCalculation={setCalculation}
+            calculation={calculation}
+            total={total}
+            setTotal={setTotal}
+            setPrev={setPrev}
+          />
+        );
+      })}
     </>
   );
 }

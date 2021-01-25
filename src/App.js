@@ -39,7 +39,6 @@ function App() {
                 calculation={calculation}
                 setCalculation={setCalculation}
                 total={total}
-                prev={prev}
                 setPrev={setPrev}
                 setTotal={setTotal}
               />
@@ -52,6 +51,8 @@ function App() {
             setCalculation={setCalculation}
             total={total}
             setTotal={setTotal}
+            prev={prev}
+            setPrev={setPrev}
           />
         </div>
         <h5 className="creator">

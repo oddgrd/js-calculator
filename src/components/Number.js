@@ -8,22 +8,19 @@ function Number({
   setCalculation,
   calculation,
   total,
-  prev,
   setPrev,
   setTotal,
 }) {
   const handleClick = (num) => {
     if (!(num === "." && input.indexOf(".") !== -1)) {
-      if (input === "0") {
+      if (input === "0" && num !== ".") {
         setInput(num);
         setCalculation(num);
       } else if (input === total && num !== ".") {
-        console.log("pls");
         setInput(num);
         setCalculation(num);
         setTotal("");
       } else {
-        console.log("this?");
         setInput(input.concat(num));
         setCalculation(calculation.concat(num));
       }
