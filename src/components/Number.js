@@ -12,7 +12,7 @@ function Number({
   setTotal,
 }) {
   const handleClick = (num) => {
-    if (input.length >= 24 || calculation.length >= 34) {
+    if (input.length >= 24) {
       setInput("     DIGIT LIMIT MET    ");
     } else {
       if (!(num === "." && input.indexOf(".") !== -1)) {

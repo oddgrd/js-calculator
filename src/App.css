@@ -61,7 +61,7 @@ body {
 .display-div {
   height: 17%;
   width: 100%;
-  color: #ee9d40;
+  color: #faab52;
   background: #1a0b19;
   font-size: 1.5rem;
   display: block;
@@ -79,6 +79,9 @@ body {
 }
 .cal {
   font-size: 1.1rem;
+}
+.inp {
+  color: white;
 }
 
 .creator {
