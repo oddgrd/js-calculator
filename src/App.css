@@ -16,7 +16,9 @@ body {
 }
 
 .calc-container {
-  border: 2px solid #801336;
+  border-top: 2px solid #801336;
+  border-left: 2px solid #801336;
+  border-right: 2px solid #801336;
   color: #ee4540;
   width: 340px;
   height: 370px;
@@ -36,7 +38,6 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1px;
-  border-top: 1px solid #2d132c;
 }
 
 .number,
