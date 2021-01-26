@@ -25,11 +25,13 @@ function Operator({
         if (problem && /[+*/-]/.test(problem.slice(problem.length - 1))) {
           problem = problem.slice(0, problem.length - 1);
         } else {
-          const result = round(evaluate(problem), 4).toString();
-          setTotal(result);
-          setInput(result);
-          setCalculation(calculation.concat("=", result));
-          setPrev("");
+          if (!/=/.test(problem)) {
+            const result = round(evaluate(problem), 4).toString();
+            setTotal(result);
+            setInput(result);
+            setCalculation(calculation.concat("=", result));
+            setPrev("");
+          }
         }
       }
     }
