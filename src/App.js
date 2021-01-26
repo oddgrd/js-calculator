@@ -31,17 +31,17 @@ function App() {
           {numbers.map((num, index) => {
             return (
               <Number
-                id={num[0]}
                 key={index}
+                id={num[0]}
                 number={num[1]}
                 input={input}
                 setInput={setInput}
                 calculation={calculation}
                 setCalculation={setCalculation}
-                total={total}
-                setPrev={setPrev}
                 setTotal={setTotal}
+                total={total}
                 prev={prev}
+                setPrev={setPrev}
               />
             );
           })}
@@ -57,7 +57,9 @@ function App() {
           />
         </div>
         <h5 className="creator">
-          <a href="https://github.com/oddgrd">by Oddgrd</a>
+          <a href="https://github.com/oddgrd" target="_blank" rel="noreferrer">
+            by Oddgrd
+          </a>
         </h5>
       </div>
     </div>

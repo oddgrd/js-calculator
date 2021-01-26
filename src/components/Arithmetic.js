@@ -20,6 +20,7 @@ function Arithmetic({
       : id === "divide"
       ? "/"
       : null;
+
   const handleClick = (op) => {
     if (input === "0") {
       setInput(op);
@@ -42,6 +43,7 @@ function Arithmetic({
     }
     setPrev(op);
   };
+
   return (
     <button
       id={id}

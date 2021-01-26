@@ -1,6 +1,6 @@
 import React from "react";
 import Arithmetic from "./Arithmetic";
-import Operator from "./Operator";
+import FunctionalOp from "./FunctionalOp";
 const arithmetics = ["add", "subtract", "multiply", "divide"];
 const ops = ["equals", "clear"];
 function Operators({
@@ -32,7 +32,7 @@ function Operators({
       })}
       {ops.map((op, index) => {
         return (
-          <Operator
+          <FunctionalOp
             id={op}
             key={index}
             setInput={setInput}

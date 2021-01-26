@@ -1,7 +1,7 @@
 import React from "react";
 const { evaluate, round } = require("mathjs");
 
-function Operator({
+function FunctionalOp({
   id,
   setInput,
   setCalculation,
@@ -49,4 +49,4 @@ function Operator({
   );
 }
 
-export default Operator;
+export default FunctionalOp;
