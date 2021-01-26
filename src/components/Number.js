@@ -10,6 +10,7 @@ function Number({
   total,
   setPrev,
   setTotal,
+  prev,
 }) {
   const handleClick = (num) => {
     if (input.length >= 24) {
@@ -23,6 +24,9 @@ function Number({
           setInput(num);
           setCalculation(num);
           setTotal("");
+        } else if (/[+x/-]/.test(prev) && num === ".") {
+          setInput(input.concat("0."));
+          setCalculation(calculation.concat("0."));
         } else {
           setInput(input.concat(num));
           setCalculation(calculation.concat(num));

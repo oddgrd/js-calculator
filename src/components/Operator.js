@@ -20,7 +20,7 @@ function Operator({
         setTotal("");
       }
     } else {
-      if (calculation) {
+      if (calculation && !/[/x]/.test(calculation.charAt(0))) {
         let problem = calculation.replace(/x/g, "*");
         if (problem && /[+*/-]/.test(problem.slice(problem.length - 1))) {
           problem = problem.slice(0, problem.length - 1);

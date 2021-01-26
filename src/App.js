@@ -41,6 +41,7 @@ function App() {
                 total={total}
                 setPrev={setPrev}
                 setTotal={setTotal}
+                prev={prev}
               />
             );
           })}
