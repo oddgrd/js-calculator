@@ -51,7 +51,7 @@ body {
 }
 .number:hover,
 .operator:hover {
-  color: #ee9d40;
+  color: #faab52;
 }
 
 .number:active,
@@ -93,7 +93,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #ee9d40;
+  color: #faab52;
 }
 a:hover {
   color: purple;
